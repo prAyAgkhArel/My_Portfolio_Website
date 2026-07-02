@@ -1,0 +1,133 @@
+/* h1 {
+    display: inline-block;
+    border-bottom: 3px solid #0d65e9;
+    padding-bottom: 5px;
+}
+
+h3{
+  font-style:italic;
+  text-decoration:underline;
+}
+
+li{
+    text-decoration-thickness:20px;
+}
+#programming{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+#frontend{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+#backend{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+#database{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    margin:50px;
+    width:50px;
+}
+
+
+.reactjs{
+    margin:50px;
+    width:50px;
+}
+
+.flasklogo{
+     margin:50px;
+     width:200px;
+}
+
+.djangologo{
+   margin:50px;
+   width:80px;
+}
+
+.sqlitelogo{
+   margin:50px;
+   width: 125px;
+}
+
+.postgrelogo{
+    margin:50px;
+    width: 100px;
+}
+
+ .content{background:linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f2ff
+    );
+    padding:20px;
+      } */
+
+.skills{
+    padding:40px;
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f2ff)
+}
+
+.skills h2{
+    display:inline-block;
+    border-bottom:3px solid #0d65e9;
+    padding-bottom:5px;
+    margin-bottom:10px;
+}
+
+.skills h3{
+    margin-top:40px;
+    margin-bottom:20px;
+    color:#0d65e9;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+    gap:25px;
+}
+
+
+
+.skill-card{
+    background:#fff;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+    
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.skill-card img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.skill-card span{
+    display:block;
+    font-weight:600;
+    font-size:0.9rem;
+}
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_css %}
+<style rel="stylesheet">
+    h1{
+
+        display: inline-block;
+        border-bottom: 3px solid blue;
+        padding-bottom: 5px;
+        margin-bottom: 40 px;
+
+    }
+
+    h2{
+        text-align: center;
+        
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<h1>Smart Attendance App</h1>
+<h2>Documentaion</h2>
+
+<div>
+    <iframe
+        src="{{ url_for('static', filename='SmartAttendanceReport.pdf') }}"
+        width="100%"
+        height="900">
+    </iframe>
+</div>
+
+
+
+{% endblock %}

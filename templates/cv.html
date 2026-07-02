@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-4">
+    <iframe
+        src="{{ url_for('static', filename='mycv.pdf') }}"
+        width="100%"
+        height="900">
+    </iframe>
+</div>
+
+{% endblock %}

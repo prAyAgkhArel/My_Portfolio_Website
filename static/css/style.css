@@ -1,0 +1,148 @@
+
+
+.navbar-brand{
+            color: #0d65e9 !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+      }
+
+.nav-link{
+            color: #71a2ec !important;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+.nav-link:hover{
+            color: #71a2ec !important;
+             }
+
+ .offcanvas-title{
+            color: #71a2ec;
+            font-weight: bold;
+                }
+
+.profile-card{
+    border: 2px solid #0d6efd;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(13,110,253,0.4);
+}
+
+
+
+.profile-card img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin:20px auto;
+}
+
+.profile-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);
+}
+
+.card-text{
+    font-size:1.1rem;
+}
+
+.typing-text{
+    border-right:3px solid #0d6efd;
+    display:inline-block;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
+.hero{
+    min-height:90vh;
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f2ff
+    );
+   
+    position:relative;
+}
+
+
+.profile-card{
+    position:relative;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#0d6efd20;
+    border-radius:50%;
+    top:-30px;
+    left:-30px;
+    z-index:-1;
+}
+
+.scroll-down{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    animation:bounce 2s infinite;
+}
+
+@media (max-width: 768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero h3{
+        font-size:1.2rem;
+    }
+
+}
+
+@keyframes bounce{
+    50%{
+        transform:translate(-50%,-10px);
+    }
+}
+
+#footer{
+    background-color:dimgrey;
+    height:100px;
+}
+
+@media (max-width: 768px){
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero h3{
+        font-size:1.2rem;
+    }
+
+    .social-links{
+        justify-content:center;
+    }
+
+}

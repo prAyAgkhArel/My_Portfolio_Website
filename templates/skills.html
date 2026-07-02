@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block page_css %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="container py-5">
+    <h1>Skills</h1>
+<hr>
+</div>
+<section class="content">
+    <h2>Tech Stacks:</h2>
+    <div class='container'>
+        <h3>Programming</h3>
+        <div id='programming'>
+            
+            <img class='logo' src="{{ url_for('static', filename='images/C.webp') }}" alt="C logo" title='C programming' >
+            <img class='logo' src="{{ url_for('static', filename='images/C++.webp') }}" alt='C++ logo' title="C++">
+            <img class='logo' src="{{ url_for('static', filename='images/logo-python.svg') }}" alt='python logo' title="Python">
+
+        </div>
+        <h3>Frontend</h3>
+        <div id='frontend'>
+            
+            <img src="{{ url_for('static', filename='images/html.jpg') }}" alt='html logo' class='logo'>
+            <img src="{{ url_for('static', filename='images/css.jpg') }}" alt='css logo' class='logo'>
+            <img src="{{ url_for('static', filename='images/js.jpg') }}" alt='javascript logo' class='logo'>
+            <img src="{{ url_for('static', filename='images/reactjs.jpg') }}" alt='react js logo' class='logo'>
+            <img src="{{ url_for('static', filename='images/bootstrap.jpg') }}" alt='bootstrap logo' class='logo'>
+        </div>
+        <h3>Backend</h3>
+        <div id='backend'>
+            
+            <img class="flasklogo" src="{{ url_for('static', filename='images/flask.webp') }}" alt='flask logo'>
+            <img class="djangologo" src="{{ url_for('static', filename='images/django.svg') }}" alt='Django logo'>
+        </div>
+        <h3>Database</h3>
+        <div id='database'>
+            
+            <img class="sqlitelogo" src="{{ url_for('static', filename='images/sqlite.jpg') }}" alt='SQlite logo'>
+            <img class="postgrelogo" src="{{ url_for('static', filename='images/postgre.jpg') }}" alt='Postgre logo'>
+
+        </div>
+        <div>
+        <h3>Platforms and Softwares</h3>
+        <ul>
+            <li>Render</li>
+            <li>VSCode</li>
+            <li>Pycharm</li>
+            <li>Jupyter Notebook</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Android Studio</li>
+        </ul>
+        </div>
+
+    </div>
+   
+</section>
+-->
+<section class="skills">
+
+    <h2>Skills</h2>
+
+    <h3>Programming</h3>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/C.webp') }}" alt="C">
+            <span>C</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/C++.webp') }}" alt="C++">
+            <span>C++</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/logo-python.svg') }}" alt="Python">
+            <span>Python</span>
+        </div>
+
+    </div>
+
+    <h3>Frontend</h3>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/html.jpg') }}" alt="HTML">
+            <span>HTML</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/css.jpg') }}" alt="CSS">
+            <span>CSS</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/js.jpg') }}" alt="JavaScript">
+            <span>JavaScript</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/reactjs.jpg') }}" alt="React">
+            <span>React JS</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/bootstrap.jpg') }}" alt="Bootstrap">
+            <span>Bootstrap</span>
+        </div>
+
+    </div>
+
+    <h3>Backend</h3>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/flask.webp') }}" alt="Flask">
+            <span>Flask</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/django.svg') }}" alt="Django">
+            <span>Django</span>
+        </div>
+    </div>
+
+    
+    <h3>Platforms and Softwares</h3>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/git.svg') }}" alt="Git">
+            <span>Git</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/github.jpg') }}" alt="GitHub">
+            <span>GitHub</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/vscode.webp') }}" alt="VSCode">
+            <span>VSCode</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/pycharm.webp') }}" alt="Pycharm">
+            <span>Pycharm</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/jupyter.webp') }}" alt="Jupyter Notebook">
+            <span>Jupyter Notebook</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/androidstudio.webp') }}" alt="Android Studio">
+            <span>Android Studio</span>
+        </div>
+
+        <div class="skill-card">
+            <img src="{{ url_for('static', filename='images/render.webp') }}" alt="Render">
+            <span>Render</span>
+        </div>
+
+    </div>
+        
+
+</section>
+
+
+{% endblock %}
