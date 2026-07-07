@@ -14,22 +14,37 @@
         font-family: italic;
         text-align: center;
     }
+
+    .pdf{
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f2ff
+    );
+
+    min-height: 100vh;
+    padding: 50px 20px;
+}
    
 </style>
 {% endblock %}
 
 
 {% block content %}
-<h1 >Sign Language Translator App</h1>
-
-<h2>Documentation</h2>
-
-<div class="container py-4">
-    <iframe
-        src="{{ url_for('static', filename='SignLanguageTranslatorReport.pdf') }}"
-        width="100%"
-        height="900">
-    </iframe>
-</div>
+<section class="pdf">
+    <a href="https://github.com/prAyAgkhArel/ASL-Classifier-app" target=_blank>
+        <h1 >Sign Language Translator App</h1>
+    </a>
+    
+    <h2>Documentation</h2>
+    
+    <div class="container py-4">
+        <iframe
+            src="{{ url_for('static', filename='SignLanguageTranslatorReport.pdf') }}"
+            width="100%"
+            height="900">
+        </iframe>
+    </div>
+</section>
 
 {% endblock %}
