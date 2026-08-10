@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %} — Prayag Kharel{% endblock %}
+
+
+{% block content %}
+
+
+    <section class="hero">
+    <div class="container py-5">
+    
+        <div class="row align-items-center">
+    
+            <!-- Left Side -->
+            <div class="col-lg-6">
+    
+                <h1 class="display-3 fw-bold">
+                   Hi, I'm <span class="text-primary">Prayag</span>
+                </h1>
+    
+                <h3 class="typing-text">
+                    Web Developer | AI Enthusiast
+                </h3>
+    
+                <h3 class="text-primary mb-3">
+                    Electronics, Communication & Information Engineer
+                </h3>
+    
+                <p class="lead">
+                    Passionate about Web Development,
+                    Artificial Intelligence and Machine Learning |
+                    Building projects and continuously learning
+                    modern technologies | Worked on Web dev, AI, IoT and
+                    Embedded System Projects |
+                </p>
+    
+                <div class="mt-4 d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('main.get_projects') }}"
+                       class="btn btn-primary me-2">
+                        View Projects
+                    </a>
+    
+                    <a href="{{ url_for('main.get_cv') }}"
+                       class="btn btn-outline-primary">
+                        My CV
+                    </a>
+
+                    <a href="{{ url_for('static', filename="mycv.pdf") }} "
+                       download
+                       class="btn btn-outline-primary">
+                        Downlaod CV
+                    </a>
+
+                </div>
+                <div class="social-links mt-4 d-flex flex-wrap gap-3">
+
+                    <a href="https://github.com/prAyAgkhArel">GitHub</a>
+
+                    
+                    <a href="https://www.linkedin.com/in/prayag-kharel-195a18336/">LinkedIn</a>
+
+                    <a href="mailto:prayagkhrel006@gmail.com">Email</a>
+
+                </div>
+    
+            </div>
+    
+            <!-- Right Side -->
+            <div class="col-lg-6">
+    
+                <div class="card profile-card">
+    
+                    <img src="{{ url_for('static', filename='prayag.jpeg') }}"
+                         class="card-img-top"
+                         alt="Prayag">
+    
+                    <div class="card-body text-center">
+    
+                        <h4>Prayag Kharel</h4>
+    
+                        <p>
+                            Full Stack Engineer • AI • Machine Learning
+                        </p>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+
+    <div class="scroll-down">
+        ↓ Scroll Down
+    </div>
+    </section>
+    
+
+
+{% endblock %}
+

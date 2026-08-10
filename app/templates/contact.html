@@ -1,0 +1,56 @@
+
+
+{% extends "base.html" %}
+{% block title %}Contact — Prayag Kharel{% endblock %}
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="contact">
+  <div class="container">
+    <h1>Contact Me</h1>
+     <p class="intro">
+            Feel free to reach out for collaborations, internships,
+            freelance work, or just to connect.
+    </p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form class="contact-form" method="POST">
+      {{ form.hidden_tag() }} {# renders the CSRF token #}
+
+      <label for="first_name">First Name</label>
+      {{ form.first_name(id="first_name") }}
+      {% for error in form.first_name.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+      <label for="last_name">Last Name</label>
+      {{ form.last_name(id="last_name") }}
+      {% for error in form.last_name.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+      <label for="email">Email</label>
+      {{ form.email(id="email") }}
+      {% for error in form.email.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+      <label for="message">Message</label>
+      {{ form.message(id="message", rows="5") }}
+      {% for error in form.message.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+      {# honeypot — hidden from real users via CSS, bots will still fill it in #}
+      <div style="position:absolute; left:-9999px;">
+        {{ form.website(tabindex="-1", autocomplete="off") }}
+      </div>
+
+      {{ form.submit(class="btn-submit") }}
+    </form>
+  </div>
+</section>
+{% endblock %}
