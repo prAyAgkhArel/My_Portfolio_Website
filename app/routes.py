@@ -21,6 +21,10 @@ def get_skills():
 def get_cv():
     return render_template("cv.html")
 
+@main_bp.route("/games")
+def get_game():
+    return render_template('games/game.html')
+
 @main_bp.route("/contact", methods=["GET", "POST"])
 def get_contact():
     form = ContactForm()
