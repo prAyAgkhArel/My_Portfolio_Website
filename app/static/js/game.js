@@ -1,13 +1,16 @@
 console.log("game.js loaded");
 
-const gameMode = document.querySelector("#game-mode");
-let mode = gameMode.value;
 
+const gameMode = document.querySelector("#game-mode");
+const difficulty = document.querySelector("#difficulty");
+const difficultyOption = document.querySelector("#difficulty-container");
+
+difficultyOption.style.display = "none";
+
+
+let mode = gameMode.value;
 let board = ["", "", "", "", "", "", "", "", ""];
 let gameover = false;
-
-
-
 let currentPlayer = "X";
 
 const cells = document.querySelectorAll(".cell");
@@ -22,10 +25,20 @@ const restart = document.querySelector("#start-game")
 
 gameMode.addEventListener("change", function() {
     console.log("Selected mode:", gameMode.value);
+
+    if (gameMode.value === "single-player") {
+
+        difficultyOption.style.display = "flex";
+
+    } else {
+
+        difficultyOption.style.display = "none";
+
+    }
 });
 
 
-function hasWinner(player) {
+function hasWinner(board, player) {
 
     const winningPatterns = [
         [0, 1, 2],
@@ -57,7 +70,7 @@ function findWinningMove(player) {
 
             board[i] = player;
 
-            if (hasWinner(player)) {
+            if (hasWinner(board, player)) {
                 board[i] = "";
                 return i;
             }
@@ -71,8 +84,9 @@ function findWinningMove(player) {
 
 
 
-function aiMove() {
-
+function easyaimove() {
+    
+    console.log("EASY AI STARTED");
     // 1. Try to win
     let winningMove = findWinningMove("O");
 
@@ -116,6 +130,114 @@ function aiMove() {
     board[move] = "O";
     cells[move].textContent = "O";
 }
+
+function hardaimove() {
+
+    console.log("Hard AI STARTED");
+
+    let move = bestMove();
+
+    console.log("Hard AI chose:", move);
+
+    board[move] = "O";
+    cells[move].textContent = "O";
+}
+
+
+
+function minimax(board, depth, isMaximizing) {
+
+    //These three conditions are the base cases for recursion
+    // because minimax should stop exploring board if any of this condition is reached
+    //condition for  O is the winner
+   if (hasWinner(board, "O")) {
+        return 10;
+    }
+    
+    // condition for X is the winner
+    if (hasWinner(board, "X")) {
+        return -10;
+    }
+    
+
+    //condition for draw
+    if (board.every(function(cell) {
+        return cell !== "";
+    })) {
+        return 0;
+    }
+
+     // AI's turn
+    if (isMaximizing) {
+
+        let bestScore = -Infinity;
+
+        for (let i = 0; i < board.length; i++) {
+
+            if (board[i] === "") {
+
+                board[i] = "O";
+
+                let score = minimax(board, depth + 1, false);
+
+                board[i] = "";
+
+                bestScore = Math.max(bestScore, score);
+            }
+        }
+
+        return bestScore;
+    }
+
+
+    // Human's turn
+    else {
+
+        let bestScore = Infinity;
+
+        for (let i = 0; i < board.length; i++) {
+
+            if (board[i] === "") {
+
+                board[i] = "X";
+
+                let score = minimax(board, depth + 1, true);
+
+                board[i] = "";
+
+                bestScore = Math.min(bestScore, score);
+            }
+        }
+
+        return bestScore;
+    }
+}
+
+function bestMove() {
+
+    let bestScore = -Infinity;
+    let move;
+
+    for (let i = 0; i < board.length; i++) {
+
+        if (board[i] === "") {
+
+            board[i] = "O";
+
+            let score = minimax(board, 0, false);
+
+            board[i] = "";
+
+            if (score > bestScore) {
+                bestScore = score;
+                move = i;
+            }
+        }
+    }
+
+    return move;
+}
+
 
 function startGame() {
 
@@ -202,6 +324,8 @@ cells.forEach(function (cell, index) {
 
                             cell.textContent = currentPlayer;
                             board[index] = currentPlayer;
+                            
+                            console.log(currentPlayer);
 
                             checkwinner(board, currentPlayer);
 
@@ -209,7 +333,22 @@ cells.forEach(function (cell, index) {
 
                                 currentPlayer = "O";
 
-                                aiMove();
+                                console.log("Difficulty:", difficulty.value);
+
+                                if (difficulty.value === "easy") 
+                                        {
+
+                                            easyaimove();
+                                            
+
+                                        }
+
+                                         else if (difficulty.value === "hard") 
+                                        {
+
+                                            hardaimove();
+
+                                        }
 
                                 checkwinner(board, currentPlayer);
                                 currentPlayer = 'X';

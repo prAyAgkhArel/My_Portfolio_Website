@@ -61,11 +61,71 @@ button:hover{
     text-align: center;
 }
 
+
+.game-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.option-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+}
+
+
+.option-group label {
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+}
+
+
+.option-group select {
+
+    padding: 0.4rem 0.7rem;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    cursor: pointer;
+
+}
+
 @media (max-width: 500px) {
     .game-board {
         grid-template-columns: repeat(3, 28vw);
         grid-template-rows: repeat(3, 28vw);
         width: 84vw;
         height: 84vw;
+    }
+
+    .game-options {
+
+        flex-direction: column;
+
+        gap: 0.8rem;
+
     }
 }
